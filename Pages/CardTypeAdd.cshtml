@@ -1,0 +1,13 @@
+﻿@model Hotwired.Models.CardType
+@{
+    Layout = "_Layout";
+}
+<turbo-stream action="replace" target="new-card-type">
+  <template><turbo-frame id="new-card-type"></turbo-frame></template>
+</turbo-stream>
+
+<turbo-stream action="append" target="types">
+  <template>
+    <partial name="CardTypeView.cshtml" model="@Model" />
+  </template>
+</turbo-stream>

@@ -1,0 +1,70 @@
+﻿@page
+@model Hotwired.Pages.HomeModel
+@{
+    Layout = "_Layout";
+}
+<turbo-frame id="content">
+    <div class="flex h-screen justify-center items-center">
+        <div class="w-96 h-2/3 border border-black">
+            <div class="p-2 h-10 w-full flex justify-between border-b border-black">
+                <span class="justify-start">Kart Tipleri</span>
+                <a asp-page="/Home" asp-page-handler="AddType" data-turbo-frame="new-card-type" class="justify-end">
+                    +
+                </a>
+            </div>
+            <div class="border border-black m-4 p-4">
+                <div class="grid grid-cols-3 gap-4">
+                    <span>Tanım</span>
+                    <span>Ziyaret Edilebilir</span>
+                    <span></span>
+                </div>
+                <turbo-frame id="new-card-type"></turbo-frame>
+                <turbo-frame id="card-types">
+                    @foreach (var type in Types.Instance) {
+                        <partial name="CardTypeView" model="@type"></partial>
+                    }
+                </turbo-frame>
+            </div>
+        </div>
+
+    </div>
+</turbo-frame>
+@*<turbo-frame id="first-frame">
+
+
+    <div class="grid grid-cols-12 ">
+        <div class="col-span-1"></div>
+
+        <div class="col-span-10 mt-5">
+            <div class="border border-black">
+                    <div class="grid grid-cols-12 text-center">
+
+                        <div class="col-span-4 pb-5">
+                            <h4>Tanımlar</h4>
+                        </div>
+
+                        <div class="col-span-4 pb-5">
+                            <h4>Ziyaret Edilebilir</h4>
+                        </div>
+
+                        <div class="col-span-4"></div>
+
+                        <div class="col-span-4 mb-3">
+                            <p></p>
+                        </div>
+
+                        <div class="col-span-4">
+                            <input type="checkbox">
+                        </div>
+
+                        <div class="col-span-4">
+                            <a asp-page="EditCard" asp-route-message="">/</a>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        <div class="col-span-1"></div>
+    </div>
+
+ </turbo-frame>*@

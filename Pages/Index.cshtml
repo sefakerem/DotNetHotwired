@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+<div class="translate-y-40 justify-center flex top-50 left-50">
+<div class="max-w-sm w-auto h-auto rounded overflow-hidden shadow-lg">
+    <form method="post">
+    <div class="px-6  py-4">
+       <img class="w-full object-cover " src="~/dist/images/idesse_logo.svg"/>
+       <div class="flex pt-3 w-full justify-center items-center">
+        <p class="pr-2 ">UserName:</p>
+            <input asp-for="@Model.UserName" type="email" />
+       </div>
+       <div class="flex w-full pt-3 justify-center items-center">
+        <p class="pr-4">Password:</p>
+            <input asp-for="@Model.Password" type="password" />
+       </div>
+    </div>
+    
+    <div class="px-6 float-right pt-4 pb-2">
+        <button type="submit" asp-page="Index" class="bg-blue-700 hover:bg-gray-100 hover:text-blue-700 transition-all text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+             Login
+        </button>
+    </div>
+   
+    </form>
+</div>
+</div>
+
+

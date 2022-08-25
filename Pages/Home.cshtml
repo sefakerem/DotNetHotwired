@@ -1,0 +1,13 @@
+﻿@page
+@model Hotwired.Pages.HomeModel
+@{
+    Layout = "_Layout";
+}
+<turbo-frame id="content">
+    <div asp-page="/CardType" class="w-full h-50 border border-b-black">
+        <div class="flex items-center m-3">
+            <img class="pl-3 items-center" src="~/dist/images/idesse-symbol.svg" />
+            <a asp-page="/Home" asp-page-handler="CardTypes" data-turbo-action="visit" class="pl-3">Kart Tipleri</a>
+        </div>
+    </div>
+</turbo-frame>
