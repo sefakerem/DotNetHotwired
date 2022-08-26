@@ -1,10 +1,14 @@
-﻿@model Hotwired.Pages.CardTypeModel
+﻿@model Hotwired.Models.CardType
+<turbo-stream action="replace" target="type-0">
+    <template>
+        <turbo-frame id="type-0"></turbo-frame>
+    </template>
 
-    <turbo-frame id=" cardtype_0"></turbo-frame>
+</turbo-stream>
 
-    <turbo-frame id="cardtypes">
-        @foreach (var cardType in Types.Instance)
-        {
-            <partial name="_TypesView" model="@cardType"></partial>
-        }
-    </turbo-frame> 
+<turbo-stream action="append" target="card-types">
+    <template>
+        <partial name="CardTypeView" model="@Model"></partial>
+    </template>
+
+</turbo-stream>

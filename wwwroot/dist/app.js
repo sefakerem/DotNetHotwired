@@ -3449,7 +3449,7 @@ __webpack_require__.r(__webpack_exports__);
  // Turns Turbo Drive on/off (default on). 
 // If off, we must opt-in to Turbo Drive on a per-link and per-form basis using data-turbo="true".
 
-_hotwired_turbo__WEBPACK_IMPORTED_MODULE_1__.session.drive = false; // Turbo event listeners
+_hotwired_turbo__WEBPACK_IMPORTED_MODULE_1__.session.drive = true; // Turbo event listeners
 
 document.addEventListener('turbo:load', function (e) {
   console.log('turbo:load', e);

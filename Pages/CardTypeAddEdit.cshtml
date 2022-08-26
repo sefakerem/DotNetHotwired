@@ -1,9 +1,7 @@
-﻿@{
-    Layout = "_Layout";
-}
+﻿
 @model Hotwired.Models.CardType
 <turbo-frame id="type-@Model.Id">
-    <form method="post">
+    <form method="post" >
         <input type="hidden" asp-for="@Model.Id" hidden />
         <div class="grid grid-cols-3 py-3">
             <input asp-for="@Model.Descr" />
