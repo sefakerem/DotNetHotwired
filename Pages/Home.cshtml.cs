@@ -22,15 +22,15 @@ namespace Hotwired.Pages
             return Partial("CardTypeAddEdit", type);
 
         }
-        public PartialViewResult OnPostSaveType(int id, string descr, bool isVisit, bool isUserAccount, bool forcedLocation)
+        public IActionResult OnPostSaveType(int id, string descr, bool isVisit, bool isUserAccount, bool forcedLocation)
         {
             if (id == 0)
             {
                 var type = new CardType { Id = Types.Instance.Count + 1, Descr = descr, IsVisit = isVisit, ForcedLocation = forcedLocation, IsUserAccount = isUserAccount };
                 Types.Instance.Add(type);
 
-                Response.ContentType = "text/vnd.turbo-stream.html";
-                return Partial("CardTypeAdd", type);
+                
+                
             }
             else
             {
@@ -39,10 +39,10 @@ namespace Hotwired.Pages
                 type.IsVisit = isVisit;
                 type.IsUserAccount = isUserAccount;
                 type.ForcedLocation = forcedLocation;
+                
 
-                Response.ContentType = "text/vnd.turbo-stream.html";
-                return Partial("CardTypeEdit", type);
             }
+            return RedirectToPage("CardType");
         }
 
         public PartialViewResult OnGetEditType(int id)
