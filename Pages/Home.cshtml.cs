@@ -37,8 +37,8 @@ namespace Hotwired.Pages
                 type.IsVisit = isVisit;
                 type.IsUserAccount = isUserAccount;
                 type.ForcedLocation = forcedLocation;
+                Response.ContentType = "text/vnd.turbo-stream.html";
                 return Partial("CardTypeEdit", type);
-
             }
             
         }
