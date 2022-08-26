@@ -8,7 +8,7 @@
         <div class="w-96 h-2/3 border border-black">
             <div class="p-2 h-10 w-full flex justify-between border-b border-black">
                 <span class="justify-start">Kart Tipleri</span>
-                <a asp-page="/Home" asp-page-handler="AddType" data-turbo-frame="new-card-type" class="justify-end">
+                <a asp-page="/Home" asp-page-handler="AddType" data-turbo-frame="type-0" class="justify-end">
                     +
                 </a>
             </div>
@@ -18,7 +18,7 @@
                     <span>Ziyaret Edilebilir</span>
                     <span></span>
                 </div>
-                <turbo-frame id="new-card-type"></turbo-frame>
+                <turbo-frame id="type-0"></turbo-frame>
                 <turbo-frame id="card-types">
                     @foreach (var type in Types.Instance) {
                         <partial name="CardTypeView" model="@type"></partial>
